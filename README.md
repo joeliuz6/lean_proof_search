@@ -40,19 +40,9 @@ The target Lean projects must have their toolchains and dependencies available.
 
 ## 3. Prepare the Lean Projects
 
-Place the traced repositories under `traced_repos/` in the root of this repository.
+Place the traced repositories under `traced_repos/` in the root of this repository, the example is given as the figure.
 The directory names and nested project paths should match the paths used by the
-entry script:
-
-| `--project-name` | Project path |
-| --- | --- |
-| `carleson` | `traced_repos/carleson_a5d265f109105809de4aaff16776b7c16b1c0bd5/carleson` |
-| `ConNF` | `traced_repos/con-nf_51c38ad244870b8b1f40b8272b281678397dfa4f/con-nf` |
-| `FLT` | `traced_repos/FLT_4a97c893071433d0d39cbf5261d0877f864c2189/FLT` |
-| `foundation` | `traced_repos/Foundation_54324e6e009f0d0a288897312d3feb1c0165ad19/Foundation` |
-| `mathlib` | `traced_repos/mathlib4_v4.16.0/mathlib4` |
-| `HepLean` | `traced_repos/PhysLean_fe082d93c2775beee6634b24b34c8482a02ba8a8/PhysLean` |
-| `Seymour` | `traced_repos/seymour_27c0384977032b693daca8c4fcfc5cc274e1f2d6/seymour` |
+entry script.
 
 The [miniCTX-v2 dataset card](https://huggingface.co/datasets/l3lab/miniCTX-v2)
 provides the source repositories and their corresponding revisions. If your
