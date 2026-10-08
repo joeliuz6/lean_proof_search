@@ -29,6 +29,7 @@ Our experiments use:
 | --- | --- |
 | Python | 3.10.18 |
 | LeanInteract (`lean-interact`) | 0.5.3 |
+| elan | 4.1.2 |
 
 Use Python 3.10.18 and ensure the LeanInteract version matches:
 
@@ -36,7 +37,9 @@ Use Python 3.10.18 and ensure the LeanInteract version matches:
 python -m pip install lean-interact==0.5.3
 ```
 
-The target Lean projects must have their toolchains and dependencies available.
+Install Lean 4 through [elan](https://leanprover-community.github.io/get_started.html)
+if it is not already available. Use the toolchain specified by each target
+project's `lean-toolchain` file.
 
 ## 3. Prepare the Lean Projects
 
@@ -47,6 +50,14 @@ entry script.
 The [miniCTX-v2 dataset card](https://huggingface.co/datasets/l3lab/miniCTX-v2)
 provides the source repositories and their corresponding revisions. If your
 local directory layout differs, update the project paths in the entry script.
+
+Ensure each target project builds successfully before running the proof search.
+For example, from the root of this repository:
+
+```bash
+cd traced_repos/seymour_27c0384977032b693daca8c4fcfc5cc274e1f2d6/seymour
+lake build
+```
 
 ## 4. Set API Keys
 
