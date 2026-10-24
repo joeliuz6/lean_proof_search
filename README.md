@@ -10,6 +10,28 @@ Our method combines dual-model proof generation, compiler-guided refinement,
 pairwise proof comparison, and stagnation-triggered resampling for Lean 4 theorem
 proving on [miniCTX-v2](https://huggingface.co/datasets/l3lab/miniCTX-v2).
 
+
+## Repository Structure
+
+```text
+lean_proof_search/
+├── README.md
+├── main.py                 # Command-line entry point
+├── search.py               # Adaptive proof search and candidate selection
+├── prompts.py              # Generation, repair, and comparison prompts
+├── proof_utils.py          # Proof formatting, diagnostics, and Lean verification
+├── utils_api.py            # Model API calls and local prover requests
+├── utils_auto_close.py     # Automatic closing with Lean tactics
+├── reporting.py            # Result statistics and proof export
+├── RLMEval/                # External dependency; cloned separately
+└── traced_repos/
+    ├── repos.png           # Example Lean project directory layout
+    └── ...                 # Locally prepared Lean projects
+```
+
+Clone RLMEval into the repository root as described below. The traced Lean
+projects must also be prepared locally under `traced_repos/`.
+
 ## 1. Install RLMEval
 
 We use several utility functions from
@@ -124,6 +146,8 @@ If you use this code in your research, please cite our paper:
   url = {https://arxiv.org/abs/2608.18084}
 }
 ```
+
+Feel free to reach out to zhuo.liu@rochester.edu if you have any questions.
 
 ## 8. Acknowledgments
 
